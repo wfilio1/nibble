@@ -1,0 +1,1020 @@
+/* affects all */ 
+
+body { 
+  margin: 0; 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 
+    sans-serif; 
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
+} 
+ 
+code { 
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', 
+    monospace; 
+} 
+
+html body { 
+  background-color: #C5DAC1; 
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+} 
+
+.navbar-light { 
+  background-color: #98b99c !important; 
+  font-family:Verdana !important; 
+  padding-top: 10px !important;  
+  margin-bottom: 30px !important; 
+  box-shadow: 0px 0px 5px  #355E3B 
+} 
+
+.website-title {  
+  opacity: 1;  
+  color: white !important;  
+  font-family: Blippo;  
+  font-size: 4.5rem; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  
+} 
+
+.nav-link-white { 
+  color: white !important; 
+  font-family: Blippo;  
+  font-size: 1.5rem; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  
+} 
+
+.nav-links-container { 
+  display: flex; 
+  justify-content: space-between; 
+  width: 100%;  
+  margin: 0 auto;  
+} 
+
+.welcome-message { 
+  color: white; 
+  font-family: Blippo;  
+  font-size: 1.2rem; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+} 
+
+.space { 
+  margin-right: 100px; 
+} 
+ 
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited { 
+  background-color: #98b99c !important; 
+  border-color: #98b99c  !important; 
+  color: white; 
+  font-family: Blippo;  
+  font-size: 1.2rem; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+ } 
+
+
+/* landing page */ 
+
+.website-mission {    
+  text-align: center; 
+  color: white; 
+  font-family: Blippo;  
+  height: 40vh; 
+  margin-top: 30px; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);     
+  min-height: 100vh; 
+  overflow-y: auto; 
+  
+} 
+
+.mission-text { 
+  font-size: 2rem; 
+  line-height: 1.5; 
+  text-align: center;
+  width: 80%; 
+  background-color: #80a187; 
+  border-radius: 20px;
+  margin: 0 auto; 
+} 
+
+.landingbutton-container { 
+  text-align: center; 
+  margin: 20px auto; 
+} 
+
+.landingbutton-container button { 
+  display: flexbox;  
+  width: 50%; 
+  border-radius: 20px; 
+  color: white; 
+  font-family: Blippo; 
+  font-size: 2rem !important; 
+  border: none;
+  outline: none; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  opacity: 0.5; 
+  transition: opacity 0.3s ease; 
+} 
+
+.landingbutton-container button:hover { 
+  opacity: 1; 
+} 
+
+.carousel-item { 
+  opacity: 1;  
+  transition: opacity 1s ease-in-out;  
+} 
+
+ /* affects pantry */ 
+
+.centered-container {  
+  display: flex;  
+  flex-direction: column;  
+  align-items: center;  
+  justify-content: center;  
+  min-height: 100vh; 
+  overflow-y: auto;
+  margin-bottom: 60px 
+}  
+
+.white-box {  
+  background-color: #80a187;  
+  border-radius: 10px; 
+  padding: 20px;  
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden; 
+  height: auto; 
+  max-width: 100%;  
+  margin: 0 auto;  
+
+}  
+
+.pantry-title {  
+  text-align: center;  
+  color: white;  
+  font-family: Blippo;  
+  font-size: 4rem;  
+  margin-bottom: 20px !important;  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}  
+
+.custom-table thead th {  
+  background-color: #80a187;  
+  color: white;  
+  font-family: Blippo;  
+  font-size: 2rem;  
+  letter-spacing: 3px;  
+  padding: 10px 120px;   
+  text-align: left;  
+  border-bottom: 5px solid white;  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+
+}  
+
+.custom-table th, .custom-table td {  
+  color: white;  
+  font-family: Blippo;  
+  padding: 10px 120px;  
+  font-size: 1.25rem;  
+  letter-spacing: 3px;  
+  text-align: center;  
+  border-bottom: 2px solid white; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}  
+
+.hoverable-row:hover {  
+  background-color: #9ECE9A;  
+}  
+
+  /* pantry delete */ 
+
+  .delete-button {  
+    background-color: transparent;   
+    color: white;  
+    font-family: Blippo;  
+    letter-spacing: 3px;  
+    border: none;  
+    outline: none ; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+
+  }  
+
+  /* pantry add */ 
+
+  .centered-form { 
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+    justify-content: center;  
+    height: 35vh  
+
+  }  
+
+   
+
+  .quantity-fieldset,  
+  .measurement-fieldset,  
+  .ingredient-fieldset {  
+
+    color: white;  
+    font-family: Blippo;  
+    letter-spacing: 3px;  
+    font-size: 1.25rem;  
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+
+  }  
+  
+  .quantity-fieldset input,  
+  .measurement-fieldset select,  
+  .ingredient-fieldset select {  
+
+    background-color: white;  
+    width: 100%;   
+    padding: 1px;  
+    margin: 3px 0;  
+    box-sizing: border-box;  
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+
+  } 
+
+  .button-container button {  
+    display: flex;  
+    justify-content: center;  
+    width: 100%;   
+    background-color: transparent;   
+    color: white;  
+    font-family: Blippo;  
+    letter-spacing: 3px;  
+    font-size: 2rem;  
+    border: none;  
+    outline: none;  
+    margin: 10px auto;  
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  }  
+
+  .button-container:hover {
+    background-color: #9ECE9A;
+    width:100%;
+    border-radius: 20px;
+  }
+
+
+  /* pantry generate to recipes */
+  .recipe-pantry-button-container {
+    display: flexbox;  
+    justify-content: center;  
+    width: 100%;   
+    background-color: transparent;   
+    color: white;  
+    font-family: Blippo;  
+    letter-spacing: 3px;  
+    font-size: 2.5rem;   
+    margin: 30px auto;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    border: none;  
+    outline: none;
+    border-radius: 20px;
+  }
+
+  .recipe-pantry-button-container:hover {
+    background-color: #9ECE9A;
+    width:100%;
+  
+  }
+
+
+/* login/register page */ 
+
+.authentication { 
+  text-align: center; 
+  color: white; 
+  font-family: Blippo;  
+  height: 40vh; 
+  margin-top: 30px; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);     
+  min-height: 50vh; 
+  overflow-y: auto; 
+
+} 
+
+.auth-title { 
+
+  font-size: 3rem; 
+  color: white;  
+  font-family: Blippo;  
+  letter-spacing: 3px;  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+
+} 
+
+
+.login-input-container { 
+  margin-bottom: 15px; 
+
+} 
+
+.login-input-label { 
+  display: block; 
+  margin-bottom: 5px; 
+  color: white;  
+  font-family: Blippo;  
+  letter-spacing: 3px;  
+  font-size: 1.5rem; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+} 
+
+.login-input-field { 
+  width: 100%; 
+  padding: 10px; 
+  border: 1px solid white; 
+  border-radius: 5px; 
+  font-size: 14px; 
+
+} 
+
+.login-button-container { 
+  display: flex; 
+  justify-content: space-between; 
+  margin-top: 10px; 
+
+} 
+
+.login-button { 
+
+  display: flexbox;  
+  justify-content: center;  
+  width: 100%;   
+  background-color: transparent;   
+  color: white;  
+  font-family: Blippo;  
+  letter-spacing: 3px;  
+  font-size: 1.5rem;  
+  border: none;  
+  outline: none;  
+  margin-right: 30px; 
+  margin-top: 10px;  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+
+} 
+
+.cancel-button { 
+
+  display: flexbox;  
+  justify-content: center;  
+  width: 100%;   
+  background-color: transparent;   
+  color: white;  
+  font-family: Blippo;  
+  letter-spacing: 3px;  
+  font-size: 1.5rem;  
+  border: none;  
+  outline: none;  
+  margin-left: 30px; 
+  margin-top: 10px;  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+
+} 
+
+.login-register-link { 
+  justify-content: center; 
+  margin-top: 30px; 
+  font-size: 1rem; 
+  color: white !important; 
+  font-family: Blippo; 
+  letter-spacing: 3px; 
+
+} 
+
+
+/* 404 */
+.err-center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #C5DAC1;
+  outline: none;
+  border: none
+}
+
+.err-content-container {
+  background-color: #80a187; 
+  text-align: center; 
+  padding: 40px; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  height: auto; 
+  width: 70%;  
+  margin: 0 auto;  
+  border-radius: 20px; 
+}
+
+.err-center-content img {
+  width: 100% auto;
+  margin-bottom: 20px;
+}
+
+.err-alert-text {
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: white; 
+  font-family: Blippo; 
+  letter-spacing: 3px; 
+  font-size: 2rem; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+.err-alert-links {
+  display: flex;
+  gap: 100px;
+  margin-top: 10px;
+  font-family: Blippo; 
+  letter-spacing: 3px; 
+  font-size: 2rem; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+/* recipe add form */ 
+
+.recipeadd-header {
+  margin-bottom: 30px;
+  line-height: 1.5;
+  color: white; 
+  font-family: Blippo; 
+  letter-spacing: 3px; 
+  font-size: 4rem; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  text-align: center;
+}
+
+.recipeadd-container {
+  background-color: #80a187;  
+  border-radius: 10px; 
+  padding: 20px;  
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden; 
+  height: auto; 
+  max-width: 90%;  
+  margin: 0px auto;
+  margin-bottom: 40px
+}
+
+.recipeadd-title {
+  color: white;  
+  font-family: Blippo;  
+  font-size: 2rem;  
+  letter-spacing: 3px;  
+  text-align: center;  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  margin: 30px auto
+}
+
+.recipeadd-inputbox {
+  border: none;
+  padding: 5px;
+  border-bottom: 2px solid white;
+  background: transparent; 
+  color: white; 
+  width: 100%;
+  margin: 10px auto;
+}
+
+.recipeadd-inputboxv2 {
+  border: 2px solid white;
+  padding: 50px;
+  background: transparent; 
+  color: white; 
+  width: 100%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  border-radius: 20px; 
+  margin: 10px auto
+}
+
+.recipeadd-imagebutton {
+  margin: 30px auto;
+  border: 1px solid white;
+  font-size: 1.5rem; 
+  font-family: Blippo; 
+  background: white;
+  border-radius: 5px; 
+}
+
+.recipeadd-imagebuttonv2 {
+  margin: 30px auto;
+  border: 4px solid #ececec;
+  font-size: 1.5rem; 
+  font-family: Blippo; 
+  background: #ececec;
+  border-radius: 5px; 
+  
+}
+
+.recipeadd-inputboxv3 {
+  border: 2px solid white;
+  padding: 20px;
+  background: transparent; 
+  color: white; 
+  width: 60%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  border-radius: 20px; 
+  margin: 10px auto
+}
+.recipeadd-inputboxv4 {
+  border: 2px solid white;
+  padding: 20px;
+  background: white; 
+  color: black; 
+  width: 100%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  border-radius: 20px; 
+  margin: 10px auto
+}
+
+.recipeadd-addbutton {
+  display: flexbox;  
+  background: transparent;
+  width: 100%;    
+  color: white;  
+  font-family: Blippo;  
+  letter-spacing: 3px;  
+  font-size: 1.5rem;  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  padding: 10px;
+  border: none;
+  outline: none
+}
+
+.recipeadd-addbutton:hover {
+  background-color: #9ECE9A;
+  border-radius: 30px;
+}
+
+.submitrecipe-button {
+  display: flexbox;  
+  align-items: left;
+  background: transparent;
+  width: 50%;    
+  color: white;  
+  font-family: Blippo;  
+  letter-spacing: 3px;  
+  font-size: 3rem;  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  padding: 10px;
+  border: none;
+  outline: none;
+  margin-top: 50px;
+}
+
+.submitrecipe-button:hover {
+  background-color: #9ECE9A;
+  border-radius: 30px;
+}
+
+
+
+  /* recipe rolodex page */
+  .card { 
+    border-color: white !important; 
+   
+  } 
+  
+    /* recipe actual page */
+  
+    /* recipe delete page*/
+
+    .recipedeletecontainer {
+  font-size: 2rem; 
+  line-height: 1.5; 
+  text-align: center;
+  width: 50%; 
+  background-color: #80a187; 
+  border-radius: 20px;
+  margin: 0 auto; 
+  margin-bottom: 50px;
+  overflow-y: auto;
+    }
+
+.recipedeleteheader {
+   color: white;  
+  font-family: Blippo;  
+  font-size: 4rem;  
+  letter-spacing: 3px;  
+  text-align: center;  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  margin: 30px auto;
+}
+
+.recipedeletebody { 
+  text-align: center; 
+  color: white; 
+  font-family: Blippo;  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);     
+
+} 
+.recipedeletebody2 { 
+  display: flex;  
+  justify-content: center;
+  color: white; 
+  font-family: Blippo;  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);     
+  width: 80%;
+  margin: 0 auto;
+} 
+
+.auth-title { 
+
+  font-size: 3rem; 
+  color: white;  
+  font-family: Blippo;  
+  letter-spacing: 3px;  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+
+} 
+
+
+.deletebutton-container {
+  display: flex;
+  justify-content: center; 
+  margin-top: 20px; 
+}
+
+.deleterecipe-button { 
+  display: flexbox;  
+  background: transparent;
+  width: 100%;    
+  color: white;  
+  font-family: Blippo;  
+  letter-spacing: 3px;  
+  font-size: 2rem;  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  padding: 10px;
+  border: none;
+  outline: none;
+  margin: 40px auto
+
+} 
+
+.deletecancel-button { 
+  display: flexbox;  
+  background: transparent;
+  width: 100%;    
+  color: white !important;  
+  font-family: Blippo;  
+  letter-spacing: 3px;  
+  font-size: 2rem;  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  padding: 10px;
+  border: none;
+  outline: none;
+  margin: 40px auto;
+  text-decoration: none !important;
+} 
+
+.deletecancel-button:hover {
+  background-color: #9ECE9A;
+}
+
+.deleterecipe-button:hover {
+  background-color: #9ECE9A;
+  
+}
+  
+  
+    /* recipe pantry page//probably reuse recipe rolodex */
+
+
+.recipepantry-container{
+  background-color: #80a187;  
+  border-radius: 10px; 
+  padding: 20px;  
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden; 
+  height: auto; 
+  max-width: 90%;  
+  margin: 0px auto;
+  margin-bottom: 40px
+}
+
+    .recipepantry-header {
+      margin-bottom: 30px;
+      line-height: 1.5;
+      color: white; 
+      font-family: Blippo; 
+      letter-spacing: 3px; 
+      font-size: 3rem; 
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+      text-align: center;
+    }
+
+.recipepantrybutton {
+  display: flexbox;  
+  align-items: left;
+  background: transparent;
+  width: 100%;    
+  color: white;  
+  font-family: Blippo;  
+  letter-spacing: 3px;  
+  font-size: 2rem;  
+  padding: 10px;
+  border: none;
+  outline: none;
+
+}
+
+.recipepantrybutton:hover {
+  background-color: #b1dbba
+}
+
+.recipepantrybody {
+  display: flex;
+  gap: 100px;
+  margin-top: 10px;
+  font-family: Blippo; 
+  letter-spacing: 3px; 
+  font-size: 1.5rem; 
+  color: white;
+  justify-content: center;
+}
+
+.cardbox {
+  background-color: #80a187;
+  margin:20px auto
+}
+.cardbox:hover {
+  background-color: #9ECE9A;
+}
+
+
+
+
+
+
+.authentication {
+  margin:50px;
+  background-color: #80a187;
+  text-align: center;
+  padding: 50px;
+  width: 500px;
+  height: 40vh;
+  margin-inline: auto;
+  border-radius: 30px;
+  
+}
+
+
+/* lofi music page */
+
+.lofi-music-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally and vertically with this line and next */
+  /* justify-content: center;  */
+  /* height: 100vh; Make the container take up the full viewport height */
+
+  opacity: 1;  
+  color: white !important;  
+  font-family: Blippo;  
+  font-size: 1.25rem; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.lofi-music-container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;  
+  color: white !important;  
+  font-family: Blippo;  
+  font-size: 1.25rem; 
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+  margin-bottom: 50px;
+}
+
+  
+  .container_flex {         
+    display: flex;        
+    align-items: center; 
+    justify-content: space-evenly;  
+    /* vh refers to viewport height. Very useful! */  
+    height: 80vh; 
+    width: 100%;      
+    background-color: #80a187   
+  
+  } 
+   
+  .recipe-table {             
+    margin: 50px;    
+    opacity: 0.9; 
+    font-family: 'Courier New', monospace; 
+    
+  } 
+  
+  img { 
+    width: 400px; /* You can set the dimensions to whatever you want */ 
+    height: 400px; 
+    object-fit: cover; 
+    
+  } 
+  
+  .recipeHeader { 
+    background-color: #80a187; 
+    opacity: 1; 
+    color: white;  
+    font-family: Blippo;  
+    letter-spacing: 3px;  
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  
+    width: 50%; 
+    margin-inline:auto;  
+    font-family: Blippo; 
+    margin: 30px auto
+    
+  } 
+
+
+  /* recipe table*/
+  .recipe-table thead th {  
+    background-color: #80a187;  
+    color: white;  
+    font-family: Blippo;  
+    font-size: 2rem;  
+    letter-spacing: 3px;  
+    padding: 10px 120px;   
+    text-align: left;  
+    border-bottom: 5px solid white;  
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  
+  }  
+  
+  .recipe-table th, .recipe-table td {  
+    color: white;  
+    background-color: #80a187;
+    font-family: Blippo;  
+    padding: 10px 120px;  
+    font-size: 1.25rem;  
+    letter-spacing: 3px;  
+    text-align: center;  
+    border-bottom: 2px solid white; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  }  
+
+  .linktodelete {
+    text-align: center;
+  }
+  
+  .linktodelete a {
+    display: inline-block;
+    background-color: #80a187;
+    color: white;
+    font-size: 1rem;
+    text-decoration: none !important
+  }
+  
+  .linktodelete a:hover {
+    background-color: #9ECE9A;
+    border-radius: 10px;
+  }
+
+
+  .recipepantry-headerv2 {
+    width: 100%;
+    line-height: 1.5;
+    color: white; 
+    font-family: Blippo; 
+    letter-spacing: 3px; 
+    font-size: 4rem; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    text-align: center;
+  }
+
+  .recipepantry-containerv2 {
+  background-color: #80a187;  
+  border-radius: 10px; 
+  padding: 20px;  
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden; 
+  overflow-y: auto;
+  height: auto; 
+  max-width: 90%;  
+  margin: 0px auto;
+  margin-bottom: 40px
+  }
+
+  .recipeviewcontainer {
+    background-color: #80a187;  
+    border-radius: 10px; 
+    padding: 20px;  
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden; 
+    overflow-y: auto;
+    height: auto; 
+    max-width: 90%;  
+    margin: 0px auto;
+    margin-bottom: 40px
+  }
+
+  .recipeviewheader {
+    width: 100%;
+    line-height: 1.5;
+    color: white;
+    font-family: Blippo;
+    letter-spacing: 3px;
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.recipetitle {
+    width: 100%;
+    line-height: 1.5;
+    color: white;
+    font-family: Blippo;
+    letter-spacing: 3px;
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.recipeviewtitle {
+  font-size: 2.5rem;
+  text-decoration: underline;
+}
+.recipeHeader-pic {
+    opacity: 1;
+    color: white;
+    font-family: Blippo;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    width: 50%;
+    margin-inline: auto;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.recipecookingcenter {
+    text-align: center;
+    margin: 20px auto
+}
+
+.recipecookingtime {
+    color: white;
+    font-family: Blippo;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.recipeingredients {
+    opacity: 1;
+    color: white;
+    font-family: Blippo;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+   font-size: 1.5rem;
+
+}
+
+.recipedirections {
+    opacity: 1;
+    color: white;
+    font-family: Blippo;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 2rem;
+    width: 50%;
+    overflow-wrap: break-word;
+  
+}
+
+.recipeviewdelete {
+  display: flex;
+  justify-content: flex-end;
+  background: transparent;
+  width: 100%;
+  color: white !important;
+  font-family: Blippo;
+  letter-spacing: 3px;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border: none;
+  outline: none;
+  margin: 40px auto;
+  text-decoration: none !important;
+}
+

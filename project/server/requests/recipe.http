@@ -1,0 +1,37 @@
+GET http://localhost:8080/api/recipes
+
+###
+
+GET http://localhost:8080/api/recipes/1
+
+###
+
+GET http://localhost:8080/api/ingredients
+
+###
+GET http://localhost:8080/api/ingredients/1
+
+###
+POST http://localhost:8080/api/recipes
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmb29kcGFudHJ5Iiwic3ViIjoiam9obkBzbWl0aC5jb20iLCJhdXRob3JpdGllcyI6IlVTRVIiLCJleHAiOjE2OTIyMjM1OTN9.KefMCzRAcdv-4ZNz9C5poMCvpUU6SIL9j35RsO-EjN8
+
+{
+    "title": "Grilled Cheese",
+    "steps": "Step 1: Gather Your Ingredients and Tools Step 2: Assemble the Sandwich Step 3: Grill the Sandwich",
+    "image": "",
+    "cookTimeMin": 10,
+    "userId": 2,
+    "recipeIngredientList": [
+        { "ingredientId": 6, "quantity": 10 },
+        { "ingredientId": 22, "quantity": 5 }
+    ]
+}
+
+###
+DELETE http://localhost:8080/api/recipes/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmb29kcGFudHJ5Iiwic3ViIjoiam9obkBzbWl0aC5jb20iLCJhdXRob3JpdGllcyI6IlVTRVIiLCJleHAiOjE2OTIyMjQwODN9.wMiN-7UktGlbpvpt4yRJWk1D4RntaMXw1LHV3Bj3_GA
+
+###
+GET http://localhost:8080/api/users

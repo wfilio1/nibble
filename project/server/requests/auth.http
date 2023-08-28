@@ -1,0 +1,40 @@
+
+### Test user login
+
+POST http://localhost:8080/authenticate
+Content-Type: application/json
+
+{
+    "username": "john@smith.com",
+    "password": "P@ssw0rd!"
+}
+
+### Test second user login
+
+POST http://localhost:8080/authenticate
+Content-Type: application/json
+
+{
+    "username": "sally@jones.com",
+    "password": "P@ssw0rd!"
+}
+
+### Test new user login
+
+POST http://localhost:8080/authenticate
+Content-Type: application/json
+
+{
+    "username": "mikejones@gmail.com",
+    "password": "abc123DEF!!!"
+}
+
+### Test user registering
+
+POST http://localhost:8080/create_account
+Content-Type: application/json
+
+{
+    "username": "mikejones@gmail.com",
+    "password": "abc123DEF!!!"
+}

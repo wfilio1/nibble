@@ -1,0 +1,25 @@
+### test get all pantry *works
+GET http://localhost:8080/api/pantry
+
+###
+
+GET http://localhost:8080/api/pantry/personal
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmb29kcGFudHJ5Iiwic3ViIjoiam9obkBzbWl0aC5jb20iLCJhdXRob3JpdGllcyI6IlVTRVIiLCJleHAiOjE2OTIzODc4OTN9.qE7-2LSaKlXe_ub5EeNXBc9C5UNOAGru6vAbXb_fj_A
+
+### test get pantry by user id //works!!
+### test add ingredient to pantry *works
+POST http://localhost:8080/api/pantry
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmb29kcGFudHJ5Iiwic3ViIjoic2FsbHlAam9uZXMuY29tIiwiYXV0aG9yaXRpZXMiOiJVU0VSIiwiZXhwIjoxNjkyMzg3OTM5fQ.zxN_P4DPHRnH9jTGJUJHwR_KFm8Y28S8S_-5X-zYE60
+
+{
+    "quantity": 100,
+    "userId": 2,
+    "ingredientId": 2,
+    "measurementId": 2
+}
+
+### test delete ingredient in pantry *works
+DELETE http://localhost:8080/api/pantry/delete/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJmb29kcGFudHJ5Iiwic3ViIjoic2FsbHlAam9uZXMuY29tIiwiYXV0aG9yaXRpZXMiOiJVU0VSIiwiZXhwIjoxNjkyMjg4MzU5fQ.7oN7UEQXB3MEIgDoc2-sCoVJtYpUuniTryth2qJcfuc
