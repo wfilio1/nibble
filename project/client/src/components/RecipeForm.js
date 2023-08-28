@@ -13,8 +13,8 @@ const RecipeForm = (props) => {
   //AWS configurations
   const region = "us-east-2";
   const bucketName = "capstone-image-upload-bucket";
-  const accessKeyId = "AKIAYGE64QJHOUPD6M2N";
-  const secretAccessKey = "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";
+  const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
+  const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
 
   //updates the AWS configuration with the provided access key and secret access key
   AWS.config.update({
