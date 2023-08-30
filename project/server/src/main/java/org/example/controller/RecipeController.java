@@ -71,7 +71,6 @@ public class RecipeController {
         return ErrorResponse.build(result);
     }
 
-//do we need anything else
     @DeleteMapping("/recipes/{recipeId}")
     public ResponseEntity<Void> deleteRecipe(@PathVariable int recipeId) {
         String username = SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString();

@@ -2,24 +2,24 @@ import logo from './logo.svg';
 import { Navbar } from 'react-bootstrap';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NavBar from './components/NavBar';
-import RecipeCards from './components/RecipeCards';
-import Login from './components/Login';
+import RecipeCards from './components/Recipe/RecipeCards';
+import Login from './components/Auth/Login';
 import { useEffect, useState } from 'react';
 import AuthContext from './context/AuthContext';
 import jwtDecode from 'jwt-decode';
-import RegistrationForm from './components/RegistrationForm';
-import Recipe from './components/Recipe';
+import RegistrationForm from './components/Auth/RegistrationForm';
+import Recipe from './components/Recipe/Recipe';
 import LandingPage from './components/LandingPage';
-import RecipeForm from './components/RecipeForm';
+import RecipeForm from './components/Recipe/RecipeForm';
 
-import ConfirmDelete from './components/RecipeDelete';
-import Pantry from './components/Pantry';
-import RecipeDelete from './components/RecipeDelete';
+import ConfirmDelete from './components/Recipe/RecipeDelete';
+import Pantry from './components/Pantry/Pantry';
+import RecipeDelete from './components/Recipe/RecipeDelete';
 
-import FourOhFour from './components/FourOhFour';
+import FourOhFour from './components/Error/FourOhFour';
 import UploadImageToS3WithNativeSdk from './ImageUpload/FileUploadSample';
 
-import RecipeCardsFromPantry from './components/RecipePantry';
+import RecipeCardsFromPantry from './components/Pantry/RecipePantry';
 
 import LoFiMusic from './components/LoFiMusic';
 

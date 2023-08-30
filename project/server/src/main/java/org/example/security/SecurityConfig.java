@@ -29,19 +29,17 @@ public class SecurityConfig {
                 .antMatchers("/authenticate").permitAll() // authenticates user needed to provide JWT
                 .antMatchers("/create_account").permitAll() // added for account creation
                 .antMatchers(HttpMethod.GET,
-                        "/api/recipes", "/api/recipes/*", "/api/ingredients", "/api/ingredients/*", "/api/measurements").permitAll()
+                        "/api/recipes", "/api/recipes/*", "/api/ingredients", "/api/ingredients/*", "/api/measurements", "/api/comments/*").permitAll()
                 .antMatchers(HttpMethod.GET,
                         "/api/pantry").permitAll()
                 .antMatchers(HttpMethod.GET,
                         "/currentUser").hasAnyAuthority("USER")
                 .antMatchers(HttpMethod.POST,
-                        "/api/recipes").hasAnyAuthority("USER")
-                .antMatchers(HttpMethod.POST,
-                        "/api/pantry").hasAnyAuthority("USER")
+                        "/api/recipes", "/api/pantry", "/api/comments").hasAnyAuthority("USER")
                 .antMatchers(HttpMethod.GET,
                         "/api/pantry/*").hasAnyAuthority("USER")
                 .antMatchers(HttpMethod.DELETE,
-                        "/api/recipes/*").hasAnyAuthority("USER")
+                        "/api/recipes/*", "/api/comments/*").hasAnyAuthority("USER")
                 .antMatchers(HttpMethod.DELETE,
                         "/api/pantry/delete/*").hasAnyAuthority("USER")
                 .antMatchers("/**").denyAll()

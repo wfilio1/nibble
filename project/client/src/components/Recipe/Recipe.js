@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { Image, Table } from "react-bootstrap"
 import { Link, useNavigate, useParams } from "react-router-dom";
-import AuthContext from "../context/AuthContext";
+import AuthContext from "../../context/AuthContext";
+import Comments from "./Comments";
 
 const Recipe = () => {
     const params = useParams();
@@ -94,6 +95,7 @@ const Recipe = () => {
         })
 
     }
+
 
 
 
@@ -211,6 +213,8 @@ const Recipe = () => {
                 </tbody>
             </Table>
         </div>
+        
+        <Comments recipeId={parseInt(params.id)} />
     </section>
 );
     

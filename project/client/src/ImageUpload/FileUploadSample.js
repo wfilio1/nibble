@@ -1,6 +1,8 @@
 import React ,{useState} from 'react';
 import AWS from 'aws-sdk'
-import { Button } from 'react-bootstrap';
+import dotenv from 'dotenv';
+
+// dotenv.config();
 
 //resources
 //note: make sure to npm install aws-sdk
@@ -12,8 +14,8 @@ import { Button } from 'react-bootstrap';
 //AWS configurations
 const region = "us-east-2";
 const bucketName = "capstone-image-upload-bucket";
-const accessKeyId = "AKIAYGE64QJHOUPD6M2N";
-const secretAccessKey = "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";
+const accessKeyId = "AKIAYGE64QJHPQNZFH5G";
+const secretAccessKey = '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';
 
 
 //updates the AWS configuration with the provided access key and secret access key
@@ -32,7 +34,6 @@ const s3 = new AWS.S3({
 
 const UploadImageToS3WithNativeSdk = (props) => {
 
-    const [progress , setProgress] = useState(0);
     const [selectedFile, setSelectedFile] = useState(null);
     const [imageUploaded, setImageUploaded] = useState(false);
 
@@ -62,8 +63,8 @@ const UploadImageToS3WithNativeSdk = (props) => {
         // Perform the actual upload using fetch
         await fetch(uploadURL, {
             method: "PUT",
-            "headers": {
-                "Content-Type": "multipart/form-data"
+            headers: {
+                "Content-Type": file.type
             },
             body: file
         })

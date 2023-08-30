@@ -1018,3 +1018,29 @@ html body {
   text-decoration: none !important;
 }
 
+.comment-section {
+  opacity: 1;
+  color: white;
+  font-family: Blippo;
+  letter-spacing: 3px;
+  font-size: 2rem;
+  width: 50%;
+  overflow-wrap: break-word;
+}
+
+.comment-view-container {
+  background-color: #80a187;  
+  border-radius: 10px; 
+  padding: 20px;  
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden; 
+  overflow-y: auto;
+  height: auto; 
+  max-width: 90%;  
+  margin: 0px auto;
+  margin-bottom: 40px
+}
+

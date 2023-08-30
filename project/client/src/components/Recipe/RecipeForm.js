@@ -1,34 +1,13 @@
 import { useContext, useEffect, useState } from "react";
-import AuthContext from "../context/AuthContext";
+import AuthContext from "../../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "react-bootstrap";
-import AWS from 'aws-sdk'
-import UploadImageToS3WithNativeSdk from "../ImageUpload/FileUploadSample";
+import UploadImageToS3WithNativeSdk from "../../ImageUpload/FileUploadSample";
 
 
 
 
 const RecipeForm = (props) => {
 
-  //AWS configurations
-  const region = "us-east-2";
-  const bucketName = "capstone-image-upload-bucket";
-  const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
-  const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
-
-  //updates the AWS configuration with the provided access key and secret access key
-  AWS.config.update({
-    accessKeyId,
-    secretAccessKey
-  })
-
-  //an instance of the AWS S3 service is created with the provided configuration. The signatureVersion is set to 'v4' to use version 4 of AWS Signature, which is required for certain S3 features.
-  const s3 = new AWS.S3({
-    region,
-    accessKeyId,
-    secretAccessKey,
-    signatureVersion: 'v4'
-  })
 
     const auth = useContext(AuthContext);
 
