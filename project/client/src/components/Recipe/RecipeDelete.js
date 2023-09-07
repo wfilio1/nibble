@@ -12,11 +12,10 @@ function RecipeDelete() {
 
   const [recipe, setRecipe] = useState(null)
 
-  useEffect(() => {
-    console.log(auth.username)
-    console.log("Params:", params); // Log the params object
-    // ... rest of the code
-  }, [params.id]);
+  // useEffect(() => {
+  //   console.log(auth.username)
+  //   console.log("Params:", params);
+  // }, [params.id]);
 
   useEffect(() => {
     fetch(`http://localhost:8080/api/recipes/${params.id}`)
@@ -43,7 +42,6 @@ function RecipeDelete() {
         navigate("/recipes")
       } else {
         console.log(`Unexpected response status code: ${response.status}`)
-        console.log(params.id)
       }
     })
   }

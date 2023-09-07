@@ -69,8 +69,6 @@ function App() {
       }
     };
 
-    // log the user for debugging purposes 
-    console.log(user);
 
     // update the user state
     setUser(user);

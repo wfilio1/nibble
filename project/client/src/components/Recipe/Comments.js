@@ -58,8 +58,6 @@ const Comments = (props) => {
             if (response.ok) {
               response.json()
               .then(q => {
-                // debugging statement
-                console.log("API response:", q)
                 navigate(`/recipes/${props.recipeId}`)
                 setCommentInput("");
               })
@@ -75,6 +73,43 @@ const Comments = (props) => {
             }
           })
         }
+
+        const handleDelete = (evt, commentId) => {
+          evt.preventDefault();
+
+          const url = `http://localhost:8080/api/comments/${commentId}`;
+       
+          fetch(url, {
+          method: "DELETE",
+          headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: "Bearer " + auth.user.token,
+          },
+          })
+          .then((response) => {
+              if (response.ok) {
+
+              } else {
+                  throw new Error("Failed to delete the recipe");
+              }
+          })
+          .catch((error) => {
+              console.error("Error deleting the recipe:", error);
+          });
+
+        }
+
+
+        //check if the comment was created by the logged in user
+    const checkUser = (user) => {
+      if(auth.user && auth.user.username === user) {
+          return true;
+      }
+      else {
+          return false;
+      }
+  }
 
     useEffect(() => {
         loadComments();
@@ -94,6 +129,10 @@ const Comments = (props) => {
                             <tr className="recipeingredients">
                                 <td >{c.username}: </td> 
                                 <td>{c.commentInput}</td>
+                                {checkUser(c.username) ? 
+                                <td><Button onClick={(evt) => handleDelete(evt, c.commentId)}>Delete</Button></td>
+                                : <td></td>}
+                                
                             </tr>)}
                         </tbody>
                     </Table>

@@ -103,7 +103,6 @@ const AddPantryIngredient = (props) => {
         if (response.ok) {
           response.json()
           .then (p => {
-          console.log("checker:", p)
           props.loadIngredients();
           reset();
         })
@@ -122,7 +121,6 @@ const AddPantryIngredient = (props) => {
 
 
   const reset = () => {
-    console.log("working")
     setQuantity("");
     setSelectedIngredient("");
     setSelectedMeasurement("");
