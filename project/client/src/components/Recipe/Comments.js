@@ -58,8 +58,6 @@ const Comments = (props) => {
             if (response.ok) {
               response.json()
               .then(q => {
-                // debugging statement
-                console.log("API response:", q)
                 navigate(`/recipes/${props.recipeId}`)
                 setCommentInput("");
               })

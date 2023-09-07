@@ -64,7 +64,6 @@ const AddLikedRecipes = (props) => {
         .then((response) => {
             if (response.ok) {
                 props.setLiked(false);
-                console.log("unliked");
             } else {
                 throw new Error("Failed to unlike the recipe");
             }

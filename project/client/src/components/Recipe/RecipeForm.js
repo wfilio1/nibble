@@ -39,7 +39,6 @@ const RecipeForm = (props) => {
         .then(response => response.json())
         .then(data => {
           setIngredients(data);
-          console.log("Ingredients data:", data); // see the ingredients being fetched bc they're blank???
         })
         .catch(error => console.error("Error fetching ingredients:", error));
     }, []);
@@ -49,7 +48,6 @@ const RecipeForm = (props) => {
         .then(response => response.json())
         .then(data => {
           setMeasurements(data);
-          console.log("Measurement data:", data); // see the ingredients being fetched bc they're blank???
         })
         .catch(error => console.error("Error fetching ingredients:", error));
     }, []);
@@ -84,8 +82,6 @@ const RecipeForm = (props) => {
             if (response.ok) {
               response.json()
               .then(q => {
-                // debugging statement
-                console.log("API response:", q)
                 setTitle(q.title)
                 setSteps(q.steps)
                 setImageUrl(q.image)

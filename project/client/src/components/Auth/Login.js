@@ -44,10 +44,6 @@ export default function Login() {
         // console.log("Errors after setting state:", errors);
       } 
 
-      
-      console.log("Response status:", response.status);
-      console.log(errors);
-
   };
 
   return (
