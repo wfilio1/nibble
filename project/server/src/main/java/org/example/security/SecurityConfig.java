@@ -29,22 +29,15 @@ public class SecurityConfig {
                 .antMatchers("/authenticate").permitAll() // authenticates user needed to provide JWT
                 .antMatchers("/create_account").permitAll() // added for account creation
                 .antMatchers(HttpMethod.GET,
-                        "/api/recipes", "/api/recipes/*", "/api/ingredients", "/api/ingredients/*", "/api/measurements", "/api/comments/*").permitAll()
-                .antMatchers(HttpMethod.GET,
-                        "/api/pantry").permitAll()
-                .antMatchers(HttpMethod.GET,
-                        "/currentUser").hasAnyAuthority("USER")
+                        "/api/recipes", "/api/recipes/*", "/api/pantry", "/api/ingredients", "/api/ingredients/*", "/api/measurements", "/api/comments/*").permitAll()
                 .antMatchers(HttpMethod.POST,
-                        "/api/recipes", "/api/pantry", "/api/comments").hasAnyAuthority("USER")
+                        "/api/recipes", "/api/pantry", "/api/comments", "/api/liked").hasAnyAuthority("USER")
                 .antMatchers(HttpMethod.GET,
-                        "/api/pantry/*").hasAnyAuthority("USER")
+                        "/api/pantry/*", "/api/liked/personal").hasAnyAuthority("USER")
                 .antMatchers(HttpMethod.DELETE,
-                        "/api/recipes/*", "/api/comments/*").hasAnyAuthority("USER")
-                .antMatchers(HttpMethod.DELETE,
-                        "/api/pantry/delete/*").hasAnyAuthority("USER")
+                        "/api/recipes/*", "/api/pantry/delete/*", "/api/comments/*", "/api/liked/*").hasAnyAuthority("USER")
                 .antMatchers("/**").denyAll()
                 .and()
-                // New...
                 .addFilter(new JwtRequestFilter(authenticationManager(authConfig), converter))
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);

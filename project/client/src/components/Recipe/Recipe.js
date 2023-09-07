@@ -1,22 +1,25 @@
 import { useContext, useEffect, useState } from "react";
-import { Image, Table } from "react-bootstrap"
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Button, Image, Table } from "react-bootstrap"
+import { Link, useParams } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import Comments from "./Comments";
+import AddLikedRecipes from "./AddLikedRecipe";
 
 const Recipe = () => {
     const params = useParams();
-    const navigate = useNavigate();
-    const [errors, setErrors] = useState([]);
-
     const auth = useContext(AuthContext);
-
     const [recipe, setRecipe] = useState(null);
     const [recipeIngredients, setRecipeIngredients] = useState([]);
     const [ingredients, setIngredients] = useState([]);
     const [measurements, setMeasurements] = useState([]);
     const [pantryItems, setPantryItems] = useState([]);
+    const [likedRecipes, setLikedRecipes] = useState(null);
+    const [liked, setLiked] = useState(false);
+    const [likedRecipeId, setLikedRecipeId] = useState(null);
 
+
+
+//Get all ingredients in order to display the ingredient name
     const loadIngredients = (recipeId) => {
         fetch(`http://localhost:8080/api/ingredients/${recipeId}`)
         .then(response => {
@@ -71,34 +74,63 @@ const Recipe = () => {
     };
 
 
+
+//Get all pantry ingredients so that we can compare if user have the ingredients
+//in their pantry
     const loadPantryItems = () => {
+        if(auth.user && auth.user.token) {
+            const url = "http://localhost:8080/api/pantry/personal";
 
-        const url = "http://localhost:8080/api/pantry/personal";
+            fetch(url, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                    Authorization: "Bearer " + auth.user.token,
+                }
+            } )
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Failed to fetch pantry ingredients');
+                }
+            })
+            .then(allPantryItems => {
+                setPantryItems(allPantryItems);
+            })
+        }
+    }
 
-        fetch(url, {
+
+    //Gets all personal liked recipes
+    useEffect(() => {
+        if(auth.user) {
+            const url = "http://localhost:8080/api/liked/personal";
+
+            fetch(url, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json",
                 Authorization: "Bearer " + auth.user.token,
-            }
-        } )
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error('Failed to fetch pantry ingredients');
-            }
-        })
-        .then(allPantryItems => {
-            setPantryItems(allPantryItems);
-        })
-
-    }
+            },
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                setLikedRecipes(data);
+            })
+            .catch((error) => {
+                console.error("Error fetching personal liked recipes:", error);
+            });
+        }
+        
+    }, [auth.user]);
 
 
 
-
+//Gets the recipe based on the recipeId, as well as check if the likedRecipes
+//recipeId matches its own recipeId
     useEffect(() => {
         const url = `http://localhost:8080/api/recipes/${params.id}`;
         fetch(url, {
@@ -116,6 +148,14 @@ const Recipe = () => {
                       loadPantryItems();  
                     }
                     loadIngredients(params.id);
+
+                    if (likedRecipes) {
+                        const likedRecipe = likedRecipes.find((likedRecipe) => likedRecipe.recipeId === recipe.recipeId);
+                        if (likedRecipe) {
+                            setLiked(true); // Set liked to true
+                            setLikedRecipeId(likedRecipe.likedRecipesId);
+                        }
+                    }
                     
                 });
             }
@@ -123,14 +163,11 @@ const Recipe = () => {
         .catch((error) => {
             console.error(error);
         });
-
-        
-    }, [params.id]);
+    }, [params.id, likedRecipes]);
 
     if (recipe === null) {
         return null;
     }
-
 
     const getMeasurementName = (measurementId) => {
         const measurement = measurements.find(m => m.measurementId === measurementId);
@@ -148,6 +185,8 @@ const Recipe = () => {
         }
     }
 
+
+//check if the recipe was created by the logged in user
     const checkUser = (user) => {
         if(auth.user && auth.user.username === user) {
             return true;
@@ -163,7 +202,7 @@ const Recipe = () => {
             <div className="recipeviewcontainer">
                 <div className="recipeviewheader">
                     <h2 className="recipetitle">{recipe.title}</h2>
-                    <h6>posted by: {recipe.username}</h6>
+                    <h6>posted by: {recipe.username}</h6> {auth.user && <AddLikedRecipes recipeId={recipe.recipeId} setLiked={setLiked} liked={liked} setLikedRecipeId={setLikedRecipeId} likedRecipeId={likedRecipeId} />}
                 </div>
     
                 <div className="recipeHeader-pic">

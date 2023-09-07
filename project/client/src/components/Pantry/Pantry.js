@@ -7,9 +7,8 @@ import DeletePantryIngredient from './DeletePantryIngredient';
 import { Button } from "react-bootstrap";
 
 const Pantry = (props) => {
-    const params = useParams();
     const auth = useContext(AuthContext);
-    const userId = auth.user.userId;
+
     const navigate = useNavigate();
   
     const [pantryIngredients, setPantryIngredients] = useState([]);

@@ -2,9 +2,11 @@ package org.example.domain;
 
 import org.example.data.LikedRecipesRepository;
 import org.example.models.LikedRecipes;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class LikedRecipesService {
 
     private final LikedRecipesRepository likedRecipesRepository;

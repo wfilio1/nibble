@@ -12,8 +12,6 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  const isFocused = useIsFocused();
-
   useEffect(() => {
     console.log("Errors:", errors);
   }, [errors]);

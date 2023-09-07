@@ -26,13 +26,12 @@ public class LikedRecipesController {
         this.appUserService = appUserService;
     }
 
-    @GetMapping("/{userId}")
-    public ResponseEntity<Object> findByUserId(@PathVariable int userId) {
-        List<LikedRecipes> likedRecipes = likedRecipesService.findByUserId(userId);
-        if (likedRecipes == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return ResponseEntity.ok(likedRecipes);
+    @GetMapping("/personal")
+    public List<LikedRecipes> findPersonal() {
+        String username = SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString();
+        AppUser appUser = (AppUser) appUserService.loadUserByUsername(username);
+
+        return likedRecipesService.findByUserId(appUser.getAppUserId());
     }
 
     @PostMapping

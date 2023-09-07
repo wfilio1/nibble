@@ -66,7 +66,7 @@ public class RecipeJdbcTemplateRepository implements RecipeRepository {
 
     @Override
     public List<Ingredients> findAllIngredients() {
-        final String sql = "select * from ingredients";
+        final String sql = "select * from ingredients order by ingredient_name";
 
         return jdbcTemplate.query(sql, new IngredientsMapper());
     }

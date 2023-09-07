@@ -85,6 +85,19 @@ create table recipe_ingredients (
         references measurements(measurement_id)
 );
 
+create table comments (
+	comment_id int primary key auto_increment,
+	comment_input text null,
+    app_user_id int null,
+    recipe_id int null,
+    constraint fk_comments_app_user_app_user_id
+		foreign key (app_user_id)
+		references app_user(app_user_id),
+	constraint fk_comments_recipe_recipe_id
+		foreign key (recipe_id)
+		references recipes(recipe_id)
+);
+
 create table liked_recipes (
 	liked_recipes_id int primary key auto_increment,
     recipe_id int null,
@@ -102,12 +115,12 @@ create table liked_recipes (
 
 -- passwords are set to "P@ssw0rd!"
 insert into app_user (username, password_hash, enabled) values
-    ('john@smith.com', '$2a$10$ntB7CsRKQzuLoKY3rfoAQen5nNyiC/U60wBsWnnYrtQQi8Z3IZzQa', 1),
-    ('sally@jones.com', '$2a$10$ntB7CsRKQzuLoKY3rfoAQen5nNyiC/U60wBsWnnYrtQQi8Z3IZzQa', 1),
-    ('wendy@filio.com', '$2a$10$ntB7CsRKQzuLoKY3rfoAQen5nNyiC/U60wBsWnnYrtQQi8Z3IZzQa', 1),
-    ('gee@wang.com', '$2a$10$ntB7CsRKQzuLoKY3rfoAQen5nNyiC/U60wBsWnnYrtQQi8Z3IZzQa', 1),
-    ('joshua@smesny.com', '$2a$10$ntB7CsRKQzuLoKY3rfoAQen5nNyiC/U60wBsWnnYrtQQi8Z3IZzQa', 1),
-    ('tyler@robinson.com', '$2a$10$ntB7CsRKQzuLoKY3rfoAQen5nNyiC/U60wBsWnnYrtQQi8Z3IZzQa', 1);
+    ('john@gmail.com', '$2a$10$ntB7CsRKQzuLoKY3rfoAQen5nNyiC/U60wBsWnnYrtQQi8Z3IZzQa', 1),
+    ('sally@gmail.com', '$2a$10$ntB7CsRKQzuLoKY3rfoAQen5nNyiC/U60wBsWnnYrtQQi8Z3IZzQa', 1),
+    ('wendy@gmail.com', '$2a$10$ntB7CsRKQzuLoKY3rfoAQen5nNyiC/U60wBsWnnYrtQQi8Z3IZzQa', 1),
+    ('gee@gmail.com', '$2a$10$ntB7CsRKQzuLoKY3rfoAQen5nNyiC/U60wBsWnnYrtQQi8Z3IZzQa', 1),
+    ('joshua@gmail.com', '$2a$10$ntB7CsRKQzuLoKY3rfoAQen5nNyiC/U60wBsWnnYrtQQi8Z3IZzQa', 1),
+    ('tyler@gmail.com', '$2a$10$ntB7CsRKQzuLoKY3rfoAQen5nNyiC/U60wBsWnnYrtQQi8Z3IZzQa', 1);
 
 insert into app_role (`name`) values
     ('USER'),
@@ -173,8 +186,10 @@ insert into ingredients (ingredient_name) values
 	('Black Pepper'), ('Beef Short Ribs'), ('Carrots'),
 	('Chestnuts'), ('Gingko nuts'), ('Dried Jujube'),
     ('Baking Powder'), ('Dashi'), ('Cooking Oil'),
-    ('Tenkasu'), ('Takoyaki Sauce'), ('Kewpie Mayonnaise'),
-    ('Bonito Flakes'), ('Aonori'), ('Octopus'), ('Bread');
+    ('Tenkasu'), ('Takoyaki Sauce'), ('Mayonnaise'),
+    ('Bonito Flakes'), ('Aonori'), ('Octopus'), ('Bread'),
+    ('Mushrooms'), ('Bell Pepper'), ('Green Onions'),
+    ('Chili Pepper'), ('Lettuce'), ('Cilantro'), ('Ginger');
 
 
 insert into item_pantry (quantity, ingredient_id, app_user_id, measurement_id) values
@@ -241,6 +256,10 @@ insert into recipe_ingredients (quantity, recipe_id, ingredient_id, measurement_
     (1,8,40,7),
     (1,8,38,8),
     (1,8,1,9);
+
+insert into comments (comment_input, app_user_id, recipe_id) values
+("This looks great!", 2, 1),
+("I can't wait to make this!!", 3, 1);
 
 insert into liked_recipes (recipe_id, app_user_id) values
 (1, 1),

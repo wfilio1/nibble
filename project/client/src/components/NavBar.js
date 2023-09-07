@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import AuthContext from "../context/AuthContext";
-import { useIsFocused } from "@react-navigation/native";
 
 const NavBar = () => {
 
@@ -15,10 +14,17 @@ const NavBar = () => {
           <Nav className="mb-3 nav-links-container">
             <Nav.Link className="nav-link-white" href="/">Home</Nav.Link>
             <Nav.Link className="nav-link-white" href="/recipes">Recipes</Nav.Link>
-            <Nav.Link className="nav-link-white" href={auth.user ? `/add-recipe` : `/login`}>Add A Recipe</Nav.Link>
-            <Nav.Link className="nav-link-white" href={auth.user ? `/pantry` : '/login'}>
-              My Pantry
-            </Nav.Link>
+            {auth.user && (
+              <>
+                <Nav.Link className="nav-link-white" href={auth.user ? `/add-recipe` : `/login`}>Add A Recipe</Nav.Link>
+                <Nav.Link className="nav-link-white" href={auth.user ? `/pantry` : '/login'}>
+                  My Pantry
+                </Nav.Link>
+                <Nav.Link className="nav-link-white" href={auth.user ? `/liked` : '/login'}>
+                  My Favorites
+                </Nav.Link>
+              </>
+            )}
             <Nav.Link className="nav-link-white" href="/music">LoFi while Cooking</Nav.Link>
 
             {auth.user === null ? (

@@ -22,6 +22,7 @@ import UploadImageToS3WithNativeSdk from './ImageUpload/FileUploadSample';
 import RecipeCardsFromPantry from './components/Pantry/RecipePantry';
 
 import LoFiMusic from './components/LoFiMusic';
+import LikedRecipes from './components/Recipe/LikedRecipes';
 
 
 
@@ -117,6 +118,7 @@ function App() {
             <Route path="*" element={<FourOhFour />} /> 
             <Route path="/fileUpload" element={<UploadImageToS3WithNativeSdk />} />
             <Route path="/recipe-pantry" element={<RecipeCardsFromPantry />} />
+            <Route path="/liked" element={<LikedRecipes />} />
 
           </Routes>
         </BrowserRouter>

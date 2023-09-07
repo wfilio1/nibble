@@ -11,7 +11,6 @@ const RecipeForm = (props) => {
 
     const auth = useContext(AuthContext);
 
-
     const [errors, setErrors] = useState([])
 
     const navigate = useNavigate();
