@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import { Button } from "react-bootstrap";
-// import Errors from "./Errors";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -12,6 +11,8 @@ export default function Login() {
   const auth = useContext(AuthContext);
 
   const navigate = useNavigate();
+
+  const isFocused = useIsFocused();
 
   useEffect(() => {
     console.log("Errors:", errors);

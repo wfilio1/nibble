@@ -8,6 +8,7 @@ import org.example.domain.Result;
 import org.example.domain.ResultType;
 import org.example.models.AppUser;
 import org.example.models.Pantry;
+import org.example.models.Recipe;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,26 +37,6 @@ public class PantryController {
         return pantryService.findAll();
     }
 
-//    @GetMapping("/{userId}")
-//    public ResponseEntity<Pantry> findPantryByUserId(@PathVariable int userId) throws DataAccessException {
-//        Pantry pantry = pantryService.findbyUserId(userId);
-//        if (pantry == null) {
-//            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-//        }
-//        return new ResponseEntity<>(pantry, HttpStatus.OK);
-//    }
-
-//    @GetMapping("/{userId}")
-//    public ResponseEntity<List<Pantry>> findPantryByUserId(@PathVariable int userId) throws DataAccessException {
-//        List<Pantry> pantryList = pantryService.findbyUserId(userId);
-//
-//        if (pantryList == null || pantryList.isEmpty()) {
-//            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-//        }
-//
-//        return new ResponseEntity<>(pantryList, HttpStatus.OK);
-//    }
-
     @GetMapping("/personal")
     public List<Pantry> findPersonal() throws DataAccessException {
         String username = SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString();
@@ -81,12 +62,25 @@ public class PantryController {
 
     @DeleteMapping("/delete/{pantryId}")
     public ResponseEntity<Void> deleteIngredient(@PathVariable int pantryId) throws DataAccessException {
-        Result result = pantryService.delete(pantryId);
-        if (result.getResultType() == ResultType.NOT_FOUND) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND); // 404
+        String username = SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString();
+        AppUser appUser = (AppUser) appUserService.loadUserByUsername(username);
+
+        List <Pantry> pantry = pantryService.findByUserId(appUser.getAppUserId());
+
+        if(!pantry.isEmpty() || pantry != null) {
+            if(appUser.getAppUserId() != pantry.get(0).getUserId()) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+
+            if(pantryService.delete(pantryId)) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
         }
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT); // 204
+
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
     }
+
 }
 
 

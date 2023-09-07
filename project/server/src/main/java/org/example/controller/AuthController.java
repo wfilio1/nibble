@@ -3,7 +3,6 @@ package org.example.controller;
 import org.example.domain.AppUserService;
 import org.example.domain.Result;
 import org.example.models.AppUser;
-import org.example.models.Recipe;
 import org.example.security.JwtConverter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +11,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -78,13 +76,5 @@ public class AuthController {
         return new ResponseEntity<>(map, HttpStatus.CREATED);
     }
 
-//    @GetMapping("/currentUser/{username}")
-//    public ResponseEntity<UserDetails> loadByUsername(String username) {
-//        UserDetails appUser = appUserService.loadUserByUsername(username);
-//        if (appUser == null) {
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//        }
-//        return ResponseEntity.ok(appUser);
-//    }
 
 }

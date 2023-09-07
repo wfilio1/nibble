@@ -21,8 +21,8 @@ public class PantryService {
         return pantryRepository.findAll();
     }
 
-    public List<Pantry> findByUserId(int app_user_id) throws DataAccessException {
-        return pantryRepository.findByUserId(app_user_id);
+    public List<Pantry> findByUserId(int userId) throws DataAccessException {
+        return pantryRepository.findByUserId(userId);
     }
 
     public Result add(Pantry pantry) throws DataAccessException {
@@ -40,16 +40,8 @@ public class PantryService {
         return result;
     }
 
-    public Result delete(int pantry_id) throws DataAccessException {
-        Result result = new Result();
-
-        if (pantryRepository.delete(pantry_id)) {
-            result.setPayload("Pantry item deleted successfully.");
-        } else {
-            result.addErrorMessage("Pantry item with ID %d was not found.", ResultType.NOT_FOUND, pantry_id);
-        }
-
-        return result;
+    public boolean delete(int pantryId) throws DataAccessException {
+        return pantryRepository.delete(pantryId);
     }
 
     private Result validate(Pantry pantry) throws DataAccessException {

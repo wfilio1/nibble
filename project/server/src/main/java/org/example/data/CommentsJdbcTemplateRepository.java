@@ -55,6 +55,6 @@ public class CommentsJdbcTemplateRepository implements CommentsRepository {
 
     @Override
     public boolean deleteComment(int commentId) {
-        return jdbcTemplate.update("delete from comments where comment_id = ?", commentId) > 0;
+        return jdbcTemplate.update("delete from comments where comment_id = ?;", commentId) > 0;
     }
 }

@@ -85,6 +85,18 @@ create table recipe_ingredients (
         references measurements(measurement_id)
 );
 
+create table liked_recipes (
+	liked_recipes_id int primary key auto_increment,
+    recipe_id int null,
+    app_user_id int null,
+    constraint fk_liked_recipes_recipes
+		foreign key (recipe_id)
+        references recipes(recipe_id),
+	constraint fk_liked_recipes_app_user
+	foreign key (app_user_id)
+	references app_user(app_user_id)
+);
+
 
 -- set up inserts into our OG database
 
@@ -229,6 +241,12 @@ insert into recipe_ingredients (quantity, recipe_id, ingredient_id, measurement_
     (1,8,40,7),
     (1,8,38,8),
     (1,8,1,9);
+
+insert into liked_recipes (recipe_id, app_user_id) values
+(1, 1),
+(2, 1),
+(3, 2),
+(4, 2);
 
 
 SELECT * FROM ingredients;

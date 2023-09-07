@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import AuthContext from "../context/AuthContext";
+import { useIsFocused } from "@react-navigation/native";
 
 const NavBar = () => {
 

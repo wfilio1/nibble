@@ -148,7 +148,7 @@ public class RecipeJdbcTemplateRepository implements RecipeRepository {
     @Transactional
     public boolean deleteRecipe(int recipeId) {
         jdbcTemplate.update("delete from recipe_ingredients where recipe_id = ?", recipeId);
-        return jdbcTemplate.update("delete from recipes where recipe_id = ?", recipeId) > 0;
+        return jdbcTemplate.update("delete from recipes where recipe_id = ?;", recipeId) > 0;
     }
 
 

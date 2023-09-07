@@ -50,7 +50,7 @@ public class PantryJdbcTemplateRepository implements PantryRepository{
 //                "from item_pantry " +
 //                "where app_user_id = ?";
 //
-////        return jdbcTemplate.query(sql,mapper, app_user_id).stream().findFirst().orElse(null);
+//        return jdbcTemplate.query(sql,mapper, app_user_id).stream().findFirst().orElse(null);
 //        List<Pantry> pantryList = jdbcTemplate.query(sql, mapper, app_user_id);
 //
 //        if (pantryList.isEmpty()) {
@@ -61,17 +61,17 @@ public class PantryJdbcTemplateRepository implements PantryRepository{
 //    }
 
     @Override
-    public List<Pantry> findByUserId(int app_user_id) throws DataAccessException {
+    public List<Pantry> findByUserId(int userId) throws DataAccessException {
         final String sql = "select item_pantry_id, quantity, ingredient_id, app_user_id, measurement_id " +
                 "from item_pantry " +
                 "where app_user_id = ?";
 
-        return jdbcTemplate.query(sql,mapper, app_user_id);
+        return jdbcTemplate.query(sql,mapper, userId);
 
     }
 
 
-    @Override //most likely going to return back an id instead of an ingredient name in frontend??
+    @Override
     public Pantry add(Pantry pantry) throws DataAccessException {
         final String sql = "insert into item_pantry (quantity, ingredient_id, app_user_id, measurement_id) " +
                 "values (?, ?, ?, ?);";
@@ -98,9 +98,9 @@ public class PantryJdbcTemplateRepository implements PantryRepository{
     }
 
     @Override
-    public boolean delete(int item_pantry_id) throws DataAccessException {
+    public boolean delete(int itemPantryId) throws DataAccessException {
         final String sql = "delete from item_pantry where item_pantry_id = ?";
-        return jdbcTemplate.update(sql, item_pantry_id) > 0;
+        return jdbcTemplate.update(sql, itemPantryId) > 0;
     }
 
 }
