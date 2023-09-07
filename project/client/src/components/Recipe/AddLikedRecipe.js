@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { Button } from "react-bootstrap";
 import AuthContext from "../../context/AuthContext";
 
@@ -8,8 +8,6 @@ const AddLikedRecipes = (props) => {
     //and userId
 
     const auth = useContext(AuthContext);
-
-    const [likedRecipeId, setLikedRecipeId] = useState(null);
 
     const recipeId = props.recipeId;
 
