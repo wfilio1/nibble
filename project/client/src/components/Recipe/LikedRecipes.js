@@ -21,7 +21,7 @@ const LikedRecipes = () => {
     const [finishedLoading, setFinishedLoading] = useState(false);
 
     useEffect(() => {
-        const url = "http://localhost:8080/api/liked/personal";
+        const url = `${process.env.REACT_APP_EB_BACKEND}/api/liked/personal`;
         // Load liked recipes first
         fetch(url, {
         method: "GET",
@@ -40,7 +40,7 @@ const LikedRecipes = () => {
         });
 
         // Then load all recipes
-        fetch("http://localhost:8080/api/recipes")
+        fetch(`${process.env.REACT_APP_EB_BACKEND}/api/recipes`)
         .then((response) => response.json())
         .then((recipe) => {
             setAllRecipes(recipe);

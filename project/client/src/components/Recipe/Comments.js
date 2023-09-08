@@ -18,7 +18,7 @@ const Comments = (props) => {
     const [recipeId, setRecipeId] = useState(parseInt(props.recipeId));
 
     const loadComments = () => {
-        const url = `http://localhost:8080/api/comments/${props.recipeId}`;
+        const url = `${process.env.REACT_APP_EB_BACKEND}/api/comments/${props.recipeId}`;
 
         fetch(url, {
             method: "GET",
@@ -46,7 +46,7 @@ const Comments = (props) => {
             commentInput, appUserId, recipeId
         }
     
-          fetch("http://localhost:8080/api/comments", {
+          fetch(`${process.env.REACT_APP_EB_BACKEND}/api/comments`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",              
@@ -77,7 +77,7 @@ const Comments = (props) => {
         const handleDelete = (evt, commentId) => {
           evt.preventDefault();
 
-          const url = `http://localhost:8080/api/comments/${commentId}`;
+          const url = `${process.env.REACT_APP_EB_BACKEND}/api/comments/${commentId}`;
        
           fetch(url, {
           method: "DELETE",

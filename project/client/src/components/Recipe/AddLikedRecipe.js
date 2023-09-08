@@ -21,7 +21,7 @@ const AddLikedRecipes = (props) => {
         }
 
 
-        const url = "http://localhost:8080/api/liked";
+        const url = `${process.env.REACT_APP_EB_BACKEND}/api/liked`;
 
         fetch(url, {
             method: "POST",
@@ -51,7 +51,7 @@ const AddLikedRecipes = (props) => {
     }
 
     const handleUnlike = () => {
-        const url = `http://localhost:8080/api/liked/${props.likedRecipeId}`;
+        const url = `${process.env.REACT_APP_EB_BACKEND}/api/liked/${props.likedRecipeId}`;
        
         fetch(url, {
         method: "DELETE",

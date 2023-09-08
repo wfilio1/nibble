@@ -21,7 +21,7 @@ const Recipe = () => {
 
 //Get all ingredients in order to display the ingredient name
     const loadIngredients = (recipeId) => {
-        fetch(`http://localhost:8080/api/ingredients/${recipeId}`)
+        fetch(`${process.env.REACT_APP_EB_BACKEND}/api/ingredients/${recipeId}`)
         .then(response => {
             if (response.ok) {
                 return response.json();
@@ -30,7 +30,7 @@ const Recipe = () => {
             }
         })
         .then(recipeIngredients => {
-            fetch("http://localhost:8080/api/ingredients/")
+            fetch(`${process.env.REACT_APP_EB_BACKEND}/api/ingredients/`)
             .then(response => {
                 if (response.ok) {
                     return response.json();
@@ -49,7 +49,7 @@ const Recipe = () => {
                 console.error(error);
             });
             
-            fetch("http://localhost:8080/api/measurements")
+            fetch(`${process.env.REACT_APP_EB_BACKEND}/api/measurements`)
             .then(response => {
                 if (response.ok) {
                     return response.json();
@@ -79,7 +79,7 @@ const Recipe = () => {
 //in their pantry
     const loadPantryItems = () => {
         if(auth.user && auth.user.token) {
-            const url = "http://localhost:8080/api/pantry/personal";
+            const url = `${process.env.REACT_APP_EB_BACKEND}/api/pantry/personal`;
 
             fetch(url, {
                 method: "GET",
@@ -106,7 +106,7 @@ const Recipe = () => {
     //Gets all personal liked recipes
     useEffect(() => {
         if(auth.user) {
-            const url = "http://localhost:8080/api/liked/personal";
+            const url = `${process.env.REACT_APP_EB_BACKEND}/api/liked/personal`;
 
             fetch(url, {
             method: "GET",
@@ -132,7 +132,7 @@ const Recipe = () => {
 //Gets the recipe based on the recipeId, as well as check if the likedRecipes
 //recipeId matches its own recipeId
     useEffect(() => {
-        const url = `http://localhost:8080/api/recipes/${params.id}`;
+        const url = `${process.env.REACT_APP_EB_BACKEND}/api/recipes/${params.id}`;
         fetch(url, {
             method: "GET",
             headers: {

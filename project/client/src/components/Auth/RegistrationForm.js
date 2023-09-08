@@ -20,7 +20,7 @@ function RegistrationForm() {
     }
 
     let verb = "POST";
-    let url = "http://localhost:8080/create_account"
+    let url = process.env.REACT_APP_EB_BACKEND;
 
     fetch(url, {
       method: verb,

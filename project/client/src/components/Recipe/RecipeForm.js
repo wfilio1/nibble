@@ -35,7 +35,7 @@ const RecipeForm = (props) => {
     }, [recipeIngredientList])
 
     useEffect(() => {
-      fetch("http://localhost:8080/api/ingredients")
+      fetch(`${process.env.REACT_APP_EB_BACKEND}/api/ingredients`)
         .then(response => response.json())
         .then(data => {
           setIngredients(data);
@@ -44,7 +44,7 @@ const RecipeForm = (props) => {
     }, []);
 
     useEffect(() => {
-      fetch("http://localhost:8080/api/measurements")
+      fetch(`${process.env.REACT_APP_EB_BACKEND}/api/measurements`)
         .then(response => response.json())
         .then(data => {
           setMeasurements(data);
@@ -70,7 +70,7 @@ const RecipeForm = (props) => {
             title, steps, image:imageUrl, cookTimeMin, userId, recipeIngredientList
         }
     
-          fetch("http://localhost:8080/api/recipes", {
+          fetch(`${process.env.REACT_APP_EB_BACKEND}/api/recipes`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",              

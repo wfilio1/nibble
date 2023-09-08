@@ -26,7 +26,7 @@ const Pantry = (props) => {
   }, [auth.user]);
   
     const loadIngredients = () => {
-      fetch(`http://localhost:8080/api/pantry/personal`, {
+      fetch(`${process.env.REACT_APP_EB_BACKEND}/api/pantry/personal`, {
         headers: {
           Authorization: `Bearer ${auth.user.token}`,
         },
@@ -42,7 +42,7 @@ const Pantry = (props) => {
     };
 
     const loadAllIngredients = () => {
-      fetch(`http://localhost:8080/api/ingredients`, {
+      fetch(`${process.env.REACT_APP_EB_BACKEND}/api/ingredients`, {
           headers: {
               Authorization: `Bearer ${auth.user.token}`,
           },
@@ -61,7 +61,7 @@ const Pantry = (props) => {
   };
 
   const loadMeasurements = () => {
-    fetch("http://localhost:8080/api/measurements", {
+    fetch(`${process.env.REACT_APP_EB_BACKEND}/api/measurements`, {
       headers: {
         Authorization: `Bearer ${auth.user.token}`,
       },

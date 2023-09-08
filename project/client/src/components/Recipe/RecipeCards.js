@@ -8,7 +8,7 @@ const RecipeCards = () => {
     const [recipeCards, setRecipeCards] = useState([]);
 
     const loadRecipeCards = () => {
-      fetch("http://localhost:8080/api/recipes")
+      fetch(`${process.env.REACT_APP_EB_BACKEND}/api/recipes`)
         .then(response => response.json())
         .then(recipe =>  {
             setRecipeCards(recipe)

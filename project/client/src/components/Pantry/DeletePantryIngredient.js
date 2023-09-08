@@ -1,7 +1,7 @@
 
 const DeletePantryIngredient = (props) => {
   const handleDelete = () => {
-      fetch(`http://localhost:8080/api/pantry/delete/${props.pantryId}`, {
+      fetch(`${process.env.REACT_APP_EB_BACKEND}/api/pantry/delete/${props.pantryId}`, {
           method: "DELETE",
           headers: {
               Authorization: `Bearer ${props.token}`,

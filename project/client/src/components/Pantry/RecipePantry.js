@@ -19,7 +19,7 @@ const RecipeCardsFromPantry = () => {
     //only display those recipeId
 
     const loadPantryIngredients = () => {
-        fetch("http://localhost:8080/api/pantry/personal", {
+        fetch(`${process.env.REACT_APP_EB_BACKEND}/api/pantry/personal`, {
             headers: {
                 Authorization: `Bearer ${auth.user.token}`,
             },
@@ -36,7 +36,7 @@ const RecipeCardsFromPantry = () => {
     };
 
     const loadRecipes = () => {
-        fetch("http://localhost:8080/api/recipes")
+        fetch(`${process.env.REACT_APP_EB_BACKEND}/api/recipes`)
           .then(response => response.json())
           .then(recipe =>  {
               setRecipes(recipe)
@@ -45,7 +45,7 @@ const RecipeCardsFromPantry = () => {
     const loadRecipeIngredients = (evt) => {
     Promise.all(
         recipes.map(recipe =>
-            fetch(`http://localhost:8080/api/ingredients/${recipe.recipeId}`)
+            fetch(`${process.env.REACT_APP_EB_BACKEND}/api/ingredients/${recipe.recipeId}`)
                 .then(response => {
                     if (response.ok) {
                         return response.json();

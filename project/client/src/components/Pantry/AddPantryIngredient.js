@@ -33,7 +33,7 @@ const AddPantryIngredient = (props) => {
 
 
   const fetchIngredients = () => {
-    fetch("http://localhost:8080/api/ingredients", {
+    fetch(`${process.env.REACT_APP_EB_BACKEND}/api/ingredients`, {
       headers: {
         Authorization: `Bearer ${auth.user.token}`,
       },
@@ -48,7 +48,7 @@ const AddPantryIngredient = (props) => {
   };
 
   const fetchMeasurements = () => {
-    fetch("http://localhost:8080/api/measurements", {
+    fetch(`${process.env.REACT_APP_EB_BACKEND}/api/measurements`, {
       headers: {
         Authorization: `Bearer ${auth.user.token}`,
       },
@@ -86,7 +86,7 @@ const AddPantryIngredient = (props) => {
 
 
     const verb = "POST";
-    const url = `http://localhost:8080/api/pantry`;
+    const url = process.env.REACT_APP_EB_BACKEND;
 
 
  

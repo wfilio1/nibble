@@ -19,7 +19,7 @@ export default function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await fetch("http://localhost:8080/authenticate", {
+    const response = await fetch(`${process.env.REACT_APP_EB_BACKEND}/authenticate`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

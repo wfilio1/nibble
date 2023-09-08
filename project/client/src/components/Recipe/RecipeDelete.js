@@ -18,7 +18,7 @@ function RecipeDelete() {
   // }, [params.id]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/recipes/${params.id}`)
+    fetch(`${process.env.REACT_APP_EB_BACKEND}/api/recipes/${params.id}`)
     .then(response => {
       if (response.ok) {
         response.json()
@@ -31,7 +31,7 @@ function RecipeDelete() {
   }, [params.id])
 
   const handleDelete = () => {
-    fetch(`http://localhost:8080/api/recipes/${params.id}`, {
+    fetch(`${process.env.REACT_APP_EB_BACKEND}/api/recipes/${params.id}`, {
       method: "DELETE",
       headers: {
         "Authorization": `Bearer ${token}`
