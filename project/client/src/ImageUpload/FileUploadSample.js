@@ -2,13 +2,6 @@ import React ,{useState} from 'react';
 import AWS from 'aws-sdk'
 
 
-// resources
-// note: make sure to npm install aws-sdk
-// https://www.youtube.com/watch?v=yGYeYJpRWPM
-
-// https://stackoverflow.com/questions/68438645/how-to-upload-files-to-aws-s3-bucket-from-the-react-frontend
-// https://stackoverflow.com/questions/71080354/getting-the-bucket-does-not-allow-acls-error
-
 //AWS configurations 
 const region = "us-east-2";
 const bucketName = "capstone-image-upload-bucket";

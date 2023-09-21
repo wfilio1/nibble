@@ -12,11 +12,6 @@ const RecipeCardsFromPantry = () => {
     const [recipeCards, setRecipeCards] = useState([]);
     const [recipeIngredientsLoaded, setRecipeIngredientsLoaded] = useState(false);
 
-    //pantryIngredients has ingredientId (ingId 26, 27)
-    //now, check if those ids are in any recipeIng that belongs to the same recipe
-    //if pantryIngredients.ingredientId === recipeIng.ingredientId , then matchingIngId
-    //use that matchingIngId to go thru the recipeIng that has that ingId, and get the recipeId
-    //only display those recipeId
 
     const loadPantryIngredients = () => {
         fetch(`${process.env.REACT_APP_EB_BACKEND}/api/pantry/personal`, {
