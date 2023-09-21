@@ -79,9 +79,9 @@ class PantryServiceTest {
         when(pantryRepository.findByUserId(1)).thenReturn(pantryListBeforeDelete);
         when(pantryRepository.delete(1)).thenReturn(true);
 
-        Result result = pantryService.delete(1);
+        boolean result = pantryService.delete(1);
 
-        assertTrue(result.isSuccess());
+        assertTrue(result);
 
     }
 
@@ -90,10 +90,9 @@ class PantryServiceTest {
 
         when(pantryRepository.delete(-1)).thenReturn(false);
 
-        Result result = pantryService.delete(-1); //invalid pantry id
+        boolean result = pantryService.delete(-1); //invalid pantry id
 
-        assertFalse(result.isSuccess());
-        assertEquals(ResultType.NOT_FOUND, result.getResultType());
+        assertFalse(result);
     }
 
     @Test
