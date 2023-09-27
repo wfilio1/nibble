@@ -31,11 +31,11 @@ public class SecurityConfig {
                 .antMatchers(HttpMethod.GET,
                         "/api/recipes", "/api/recipes/*", "/api/pantry", "/api/ingredients", "/api/ingredients/*", "/api/measurements", "/api/comments/*").permitAll()
                 .antMatchers(HttpMethod.POST,
-                        "/api/recipes", "/api/pantry", "/api/comments", "/api/liked").hasAnyAuthority("USER")
+                        "/api/recipes", "/api/pantry", "/api/comments", "/api/liked").hasAnyAuthority("USER", "ADMIN")
                 .antMatchers(HttpMethod.GET,
-                        "/api/pantry/*", "/api/liked/personal").hasAnyAuthority("USER")
+                        "/api/pantry/*", "/api/liked/personal").hasAnyAuthority("USER", "ADMIN")
                 .antMatchers(HttpMethod.DELETE,
-                        "/api/recipes/*", "/api/pantry/delete/*", "/api/comments/*", "/api/liked/*").hasAnyAuthority("USER")
+                        "/api/recipes/*", "/api/pantry/delete/*", "/api/comments/*", "/api/liked/*", "ADMIN").hasAnyAuthority("USER")
                 .antMatchers("/**").denyAll()
                 .and()
                 .addFilter(new JwtRequestFilter(authenticationManager(authConfig), converter))

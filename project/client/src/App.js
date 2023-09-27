@@ -15,14 +15,13 @@ import RecipeForm from './components/Recipe/RecipeForm';
 import ConfirmDelete from './components/Recipe/RecipeDelete';
 import Pantry from './components/Pantry/Pantry';
 import RecipeDelete from './components/Recipe/RecipeDelete';
-
-import FourOhFour from './components/Error/FourOhFour';
 import UploadImageToS3WithNativeSdk from './ImageUpload/FileUploadSample';
 
 import RecipeCardsFromPantry from './components/Pantry/RecipePantry';
 
 import LoFiMusic from './components/LoFiMusic';
 import LikedRecipes from './components/Recipe/LikedRecipes';
+import FourOhFour from './components/Error/404';
 
 
 

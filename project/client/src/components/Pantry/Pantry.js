@@ -34,7 +34,7 @@ const Pantry = (props) => {
         .then((response) => response.json())
         .then((data) => {
           setPantryIngredients(data);
-          // console.log(data);
+          console.log(data);
         })
         .catch((error) => {
           console.error("Error fetching pantry ingredients:", error);

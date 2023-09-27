@@ -18,6 +18,7 @@ const AddPantryIngredient = (props) => {
 
   const [filteredIngredients, setFilteredIngredients] = useState([]);
   
+  
 
   useEffect(() => {
     fetchIngredients();
@@ -86,7 +87,7 @@ const AddPantryIngredient = (props) => {
 
 
     const verb = "POST";
-    const url = process.env.REACT_APP_EB_BACKEND;
+    const url = process.env.REACT_APP_EB_BACKEND + "/api/pantry";
 
 
  

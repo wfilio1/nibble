@@ -39,6 +39,7 @@ const RecipeForm = (props) => {
         .then(response => response.json())
         .then(data => {
           setIngredients(data);
+
         })
         .catch(error => console.error("Error fetching ingredients:", error));
     }, []);
